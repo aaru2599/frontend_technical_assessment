@@ -1,0 +1,7 @@
+cat <<EOF > .gitignore
+.DS_Store
+node_modules/
+.env
+build
+dist
+EOF
