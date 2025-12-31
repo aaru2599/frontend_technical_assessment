@@ -8,7 +8,7 @@ export const InputNode = ({ id, data }) => {
   const [inputType, setInputType] = useState(data.inputType || 'Text');
 
   const handleNameChange = (e) => {
-    setCurrName(e.target.value);
+    // setCurrName(e.target.value);
   };
 
   const handleTypeChange = (e) => {
