@@ -4,14 +4,15 @@
 
 import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
-import { useStore } from './store';
+import { useStore } from '../../store';
 import { shallow } from 'zustand/shallow';
-import { InputNode } from './nodes/inputNode';
-import { LLMNode } from './nodes/llmNode';
-import { OutputNode } from './nodes/outputNode';
-import { TextNode } from './nodes/textNode';
 
 import 'reactflow/dist/style.css';
+import { InputNode } from '../Molecules/nodes/InputNode';
+import { OutputNode } from '../Molecules/nodes/OutputNode';
+import { TextNode } from '../Molecules/nodes/TextNode';
+import { LLMNode } from '../Molecules/nodes/LlmNode';
+import MathNode from '../Molecules/nodes/MathNode';
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -20,6 +21,7 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  mathnode:MathNode
 };
 
 const selector = (state) => ({
@@ -104,6 +106,7 @@ export const PipelineUI = () => {
                 proOptions={proOptions}
                 snapGrid={[gridSize, gridSize]}
                 connectionLineType='smoothstep'
+                edgesUpdatable={true}
             >
                 <Background color="#aaa" gap={gridSize} />
                 <Controls />

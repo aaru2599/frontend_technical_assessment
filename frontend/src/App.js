@@ -1,14 +1,15 @@
-import { PipelineToolbar } from './toolbar';
-import { PipelineUI } from './ui';
-import { SubmitButton } from './submit';
+import { PipelineToolbar } from './Components/Organism/toolbar';
+import { PipelineUI } from './Components/Page/ui';
+import { SubmitButton } from './Components/Molecules/submit';
+import { ReactFlowProvider } from 'reactflow';
 
 function App() {
   return (
-    <div>
+    <ReactFlowProvider>
       <PipelineToolbar />
       <PipelineUI />
       <SubmitButton />
-    </div>
+    </ReactFlowProvider>
   );
 }
 
